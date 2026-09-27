@@ -28,7 +28,7 @@ Open `index.html` in your browser or use a simple local server.
    ```
 3. Deploy from this folder:
    ```bash
-   cd "c:\Users\joefe\OneDrive\Desktop\New.Web.Code"
+   cd "c:\Users\joefe\OneDrive\Desktop\Via.Federico.Photography.code"
    vercel --prod
    ```
 
