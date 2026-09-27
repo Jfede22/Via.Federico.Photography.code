@@ -126,6 +126,57 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 4500);
   }
 
+  const workTrack = document.getElementById('workTrack');
+  const workDots = document.getElementById('workDots');
+  if (workTrack && workDots) {
+    const workSlides = Array.from(workTrack.children);
+    const workCarousel = document.getElementById('workCarousel');
+    let workIndex = 0;
+    let workTimer = null;
+
+    function showWork(index) {
+      workIndex = (index + workSlides.length) % workSlides.length;
+      workTrack.style.transform = `translateX(-${workIndex * 100}%)`;
+      workDots.querySelectorAll('button').forEach((btn, idx) => {
+        btn.classList.toggle('active', idx === workIndex);
+      });
+    }
+
+    function startWork() {
+      clearInterval(workTimer);
+      workTimer = setInterval(() => showWork(workIndex + 1), 4000);
+    }
+
+    workSlides.forEach((slide, index) => {
+      const button = document.createElement('button');
+      button.setAttribute('aria-label', `Show photo ${index + 1}`);
+      button.className = index === 0 ? 'active' : '';
+      button.addEventListener('click', function () {
+        showWork(index);
+        startWork();
+      });
+      workDots.appendChild(button);
+    });
+
+    let touchStartX = null;
+    workCarousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    workCarousel.addEventListener('touchend', (e) => {
+      if (touchStartX === null) return;
+      const deltaX = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(deltaX) > 40) {
+        showWork(workIndex + (deltaX < 0 ? 1 : -1));
+        startWork();
+      }
+      touchStartX = null;
+    });
+
+    workCarousel.addEventListener('mouseenter', () => clearInterval(workTimer));
+    workCarousel.addEventListener('mouseleave', startWork);
+    startWork();
+  }
+
   if (filterButtons.length && portfolioItems.length) {
     filterButtons.forEach((button) => {
       button.addEventListener('click', function () {

@@ -106,7 +106,7 @@
 
       <section class="content-section">
         <div class="container">
-          <div class="section-head reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:72px;">
+          <div class="section-head work-head reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:72px;">
             <div>
               <p>Recent Work</p>
               <h2>Every Frame,<br /><em>A Story Told</em></h2>
@@ -115,12 +115,13 @@
               <p class="lead" style="margin-left:auto;max-width:380px;">Portraits, lifestyle shoots, and every moment worth holding onto.</p>
             </div>
           </div>
-          <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr;grid-template-rows:auto auto;gap:10px;">
-            <div class="portfolio-item reveal" style="grid-row:1 / 3;height:640px;"><div class="photo-placeholder" style="height:100%;"></div><div class="overlay"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:var(--cream);">Portraits</span></div></div>
-            <div class="portfolio-item reveal" style="height:310px;"><div class="photo-placeholder" style="height:100%;"></div><div class="overlay"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:var(--cream);">Weddings</span></div></div>
-            <div class="portfolio-item reveal" style="height:310px;"><div class="photo-placeholder" style="height:100%;"></div><div class="overlay"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:var(--cream);">Golden Hour</span></div></div>
-            <div class="portfolio-item reveal" style="height:310px;"><div class="photo-placeholder" style="height:100%;"></div><div class="overlay"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:var(--cream);">Engagements</span></div></div>
-            <div class="portfolio-item reveal" style="height:310px;"><div class="photo-placeholder" style="height:100%;"></div><div class="overlay"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;color:var(--cream);">Families</span></div></div>
+          <div class="work-carousel reveal" id="workCarousel" aria-roledescription="carousel" aria-label="Recent work">
+            <div class="work-track" id="workTrack">
+              <div class="work-slide" style="background:var(--olive-deep);"><div class="photo-placeholder"></div><span class="work-caption">Portraits</span></div>
+              <div class="work-slide" style="background:var(--olive-dark);"><div class="photo-placeholder"></div><span class="work-caption">Weddings</span></div>
+              <div class="work-slide" style="background:var(--olive-mid);"><div class="photo-placeholder"></div><span class="work-caption">Golden Hour</span></div>
+            </div>
+            <div class="work-dots" id="workDots"></div>
           </div>
           <div class="portfolio-footer reveal" style="text-align:center;margin-top:60px;"><a class="btn-dark" href="portfolio.html">View Full Portfolio</a></div>
         </div>
@@ -140,7 +141,7 @@
             </div>
             <div class="photographer-copy">
               <p class="photographer-label">THE PHOTOGRAPHER</p>
-              <h3 style="font-family:'Cormorant Garamond',serif;color:var(--olive-deep);margin-bottom:18px;">Raised in Yuma,<br /><em>Guided by Faith</em></h3>
+              <h3 style="font-family:'Cormorant Garamond',serif;color:var(--olive-deep);margin-bottom:18px;">Rooted in Yuma,<br /><em>Drawn to the Light</em></h3>
               <div class="divider"></div>
               <p class="lead" style="color:var(--stone);max-width:760px;margin-bottom:18px;">Yuma, Arizona made me who I am, patient, comfortable in uncomfortable heat, and really good at finding beauty in the middle of nowhere. These days I shoot portraits and lifestyle work, and my whole thing is keeping it lowkey and natural. If you leave a shoot actually having fun, I've done my job.</p>
               <p class="photographer-quote" style="font-style:italic;color:var(--stone);max-width:640px;margin-bottom:22px;">“When you choose me as your photographer, you’re getting more than just beautiful photos — you’re investing in an experience built on trust, storytelling, and real connection.”</p>
@@ -162,28 +163,21 @@
               <p style="font-family:'Jost',sans-serif;font-weight:200;font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--olive-mid);margin-bottom:14px;">Portraits & Milestones</p>
               <h3 style="font-family:'Cormorant Garamond',serif;color:var(--olive-deep);margin-bottom:12px;">Personal sessions</h3>
               <p style="color:var(--stone);">Portraits, couples, families, headshots, proposals, engagements, elopements, and graduations.</p>
-              <p class="offer-price">Starting at $60</p>
-              <a class="btn-dark" href="https://viafedericophotography.setmore.com" target="_blank">Book Now</a>
-            </div>
-            <div class="offer-card reveal">
-              <p style="font-family:'Jost',sans-serif;font-weight:200;font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--olive-mid);margin-bottom:14px;">Weddings & Events</p>
-              <h3 style="font-family:'Cormorant Garamond',serif;color:var(--olive-deep);margin-bottom:12px;">Celebrations / Weddings and Events</h3>
-              <p style="color:var(--stone);">Full wedding ceremony coverage, event photography, and cinematic videography to capture every detail.</p>
-              <p class="offer-price">Starting at $600</p>
+              <p class="offer-price">Contact for Details</p>
               <a class="btn-dark" href="https://viafedericophotography.setmore.com" target="_blank">Book Now</a>
             </div>
             <div class="offer-card reveal">
               <p style="font-family:'Jost',sans-serif;font-weight:200;font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--olive-mid);margin-bottom:14px;">Product & Brand</p>
               <h3 style="font-family:'Cormorant Garamond',serif;color:var(--olive-deep);margin-bottom:12px;">Commercial / Product and Brand</h3>
               <p style="color:var(--stone);">Clean, compelling product photography that elevates your brand with studio-quality results.</p>
-              <p class="offer-price">Starting at $300</p>
+              <p class="offer-price">Contact for Details</p>
               <a class="btn-dark" href="https://viafedericophotography.setmore.com" target="_blank">Book Now</a>
             </div>
-            <div class="offer-card offer-card--videography reveal">
+            <div class="offer-card reveal">
               <p style="font-family:'Jost',sans-serif;font-weight:200;font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--olive-mid);margin-bottom:14px;">Videography</p>
               <h3 style="font-family:'Cormorant Garamond',serif;color:var(--olive-deep);margin-bottom:12px;">Short Reels & Highlight Films</h3>
               <p style="color:var(--stone);">Short social reels, session videos, and cinematic highlight films to pair with your photography.</p>
-              <p class="offer-price">Starting at $75</p>
+              <p class="offer-price">Contact for Details</p>
               <a class="btn-dark" href="https://viafedericophotography.setmore.com" target="_blank">Book Now</a>
             </div>
           </div>
@@ -196,7 +190,7 @@
         <div class="container">
           <div class="section-head center reveal" style="margin-bottom:40px;">
             <p>Client Words</p>
-            <h2>What Clients Are Saying</h2>
+            <h2>What the People Are Saying</h2>
           </div>
           <div class="client-box-grid">
             <a class="client-box reveal" href="contact.html">
