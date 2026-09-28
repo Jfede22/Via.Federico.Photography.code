@@ -2382,3 +2382,47 @@ button {
 .specialty-grid .pricing-card .btn-dark {
   border-radius: 10px;
 }
+
+/* ── Home hero: centered on mobile ── */
+@media (max-width: 768px) {
+  .hero-section .hero-copy {
+    text-align: center;
+  }
+
+  .hero-section .hero-copy .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-section .hero-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-section .slide-caption {
+    left: 0;
+    right: 0;
+    bottom: 64px;
+    text-align: center;
+  }
+
+  .hero-section .slideshow-dot-row {
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+  }
+
+  .hero-section .slide-dot {
+    min-height: 0;
+  }
+}
+
+/* ── Home: Let's Connect ── */
+@media (min-width: 1081px) {
+  .connect-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    max-width: 960px;
+    align-items: center;
+  }
+}

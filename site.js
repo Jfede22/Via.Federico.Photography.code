@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const portfolioItems = Array.from(document.querySelectorAll('.portfolio-item'));
   const tabButtons = Array.from(document.querySelectorAll('[data-tab]'));
   const pricingPanels = Array.from(document.querySelectorAll('.pricing-panel'));
+  // Only the home page has a dark full-screen hero behind a transparent header
+  const solidHeader = !document.querySelector('.hero-section');
 
 
   function updateHeader() {
-    const scrolled = window.scrollY > 60;
+    const scrolled = solidHeader || window.scrollY > 60;
     header.classList.toggle('scrolled', scrolled);
     if (logo) {
       logo.style.filter = scrolled ? 'none' : 'brightness(0) invert(1)';
