@@ -3,18 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio | Via Federico's Photography</title>
-    <meta
-      name="description"
-      content="Browse the portfolio categories and photography work from Via Federico's Photography."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+    <title>Portfolio | Yuma Portrait &amp; Event Photography</title>
+    <meta name="description" content="Browse portrait, couples, family, event and product photography by Via Federico's Photography, a photographer based in Yuma, Arizona." />
+    <link rel="canonical" href="https://viafedericosphotography.com/portfolio.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Via Federico's Photography" />
+    <meta property="og:title" content="Portfolio | Yuma Portrait &amp; Event Photography" />
+    <meta property="og:description" content="Browse portrait, couples, family, event and product photography by Via Federico's Photography, a photographer based in Yuma, Arizona." />
+    <meta property="og:url" content="https://viafedericosphotography.com/portfolio.html" />
+    <meta property="og:image" content="https://viafedericosphotography.com/logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="fonts/fonts.css" />
     <link rel="icon" href="logo.png" type="image/png" />
     <link rel="stylesheet" href="site.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <header class="nav-header scrolled" id="siteHeader">
       <div class="nav-inner container">
         <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
@@ -29,7 +33,7 @@
           <a class="nav-link" href="pricing.html">Pricing</a>
           <a class="nav-link" href="contact.html">Contact</a>
         </nav>
-        <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">
+        <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu" aria-controls="mobileMenu" aria-expanded="false">
           <span id="burgerTop"></span>
           <span id="burgerMiddle"></span>
           <span id="burgerBottom"></span>
@@ -48,7 +52,7 @@
       </div>
     </header>
 
-    <main style="padding-top:100px;">
+    <main id="main" style="padding-top:100px;">
       <section class="hero-compact" style="background:var(--charcoal);">
         <div class="hero-backdrop"></div>
         <div class="hero-grid" style="grid-template-columns:1fr;justify-items:center;">
@@ -116,26 +120,27 @@
           <div>
             <p class="footer-title">Follow</p>
             <div style="display:flex;flex-direction:column;gap:12px;">
-              <a href="https://www.instagram.com/viafedericophotos/" target="_blank" style="font-family:'Jost',sans-serif;font-weight:300;font-size:0.88rem;color:var(--olive-pale);text-decoration:underline;display:inline-block;">Instagram</a>
-              <a href="https://www.facebook.com/profile.php?id=61590409161497" target="_blank" style="font-family:'Jost',sans-serif;font-weight:300;font-size:0.88rem;color:var(--olive-pale);text-decoration:underline;display:inline-block;">Facebook</a>
-              <a href="https://www.tiktok.com/@viafedericophotography" target="_blank" style="font-family:'Jost',sans-serif;font-weight:300;font-size:0.88rem;color:var(--olive-pale);text-decoration:underline;display:inline-block;">TikTok</a>
-              <a href="https://beaconsai.com/viafedericophotography" target="_blank" style="font-family:'Jost',sans-serif;font-weight:300;font-size:0.88rem;color:var(--olive-pale);text-decoration:underline;display:inline-block;">Beacons.ai</a>
+              <a href="https://www.instagram.com/viafedericophotos/" target="_blank" rel="noopener noreferrer" style="font-family:'Jost',sans-serif;font-weight:300;font-size:0.88rem;color:var(--olive-pale);text-decoration:underline;display:inline-block;">Instagram</a>
+              <a href="https://www.facebook.com/profile.php?id=61590409161497" target="_blank" rel="noopener noreferrer" style="font-family:'Jost',sans-serif;font-weight:300;font-size:0.88rem;color:var(--olive-pale);text-decoration:underline;display:inline-block;">Facebook</a>
+              <a href="https://www.tiktok.com/@viafedericophotography" target="_blank" rel="noopener noreferrer" style="font-family:'Jost',sans-serif;font-weight:300;font-size:0.88rem;color:var(--olive-pale);text-decoration:underline;display:inline-block;">TikTok</a>
+              <a href="https://beaconsai.com/viafedericophotography" target="_blank" rel="noopener noreferrer" style="font-family:'Jost',sans-serif;font-weight:300;font-size:0.88rem;color:var(--olive-pale);text-decoration:underline;display:inline-block;">Beacons.ai</a>
             </div>
           </div>
         </div>
         <div class="container footer-bottom">
           <p>&copy; 2026 Via Federico's Photography. All rights reserved.</p>
-          <p>Yuma, Arizona</p>
+          <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookie Policy</a>
+          <a href="accessibility.html">Accessibility</a>
+          <button type="button" data-cookie-settings>Cookie Settings</button>
+        </div>
         </div>
       </footer>
 
       <script src="site.js" defer></script>
     </main>
-
-    <!-- Vercel Web Analytics -->
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="consent.js" defer></script>
   </body>
 </html>

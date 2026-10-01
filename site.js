@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const pricingPanels = Array.from(document.querySelectorAll('.pricing-panel'));
   // Only the home page has a dark full-screen hero behind a transparent header
   const solidHeader = !document.querySelector('.hero-section');
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 
   function updateHeader() {
@@ -60,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeMenu() {
       mobileMenu.classList.remove('open');
       menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
       burgerTop.style.transform = 'rotate(0deg) translate(0, 0)';
       burgerMiddle.style.opacity = '1';
       burgerMiddle.style.transform = 'translateX(0)';
@@ -69,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     menuToggle.addEventListener('click', function () {
       const open = mobileMenu.classList.toggle('open');
       menuToggle.classList.toggle('open', open);
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       burgerTop.style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : 'rotate(0deg) translate(0, 0)';
       burgerMiddle.style.opacity = open ? '0' : '1';
       burgerMiddle.style.transform = open ? 'translateX(-10px)' : 'translateX(0)';
@@ -115,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     slides.forEach((slide, index) => {
       const button = document.createElement('button');
       button.className = index === 0 ? 'slide-dot active' : 'slide-dot';
+      button.setAttribute('aria-label', `Show slide ${index + 1}`);
       button.addEventListener('click', function () {
         currentSlide = index;
         updateSlide(index);
@@ -122,10 +126,12 @@ document.addEventListener('DOMContentLoaded', function () {
       slideDots.appendChild(button);
     });
 
-    setInterval(function () {
-      currentSlide = (currentSlide + 1) % slides.length;
-      updateSlide(currentSlide);
-    }, 4500);
+    if (!reduceMotion) {
+      setInterval(function () {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlide(currentSlide);
+      }, 4500);
+    }
   }
 
   const workTrack = document.getElementById('workTrack');
@@ -146,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function startWork() {
       clearInterval(workTimer);
+      if (reduceMotion) return;
       workTimer = setInterval(() => showWork(workIndex + 1), 4000);
     }
 

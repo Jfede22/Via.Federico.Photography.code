@@ -39,7 +39,12 @@ Open `index.html` in your browser or use a simple local server.
 - `services.html`
 - `portfolio.html`
 - `pricing.html`
+- `booking.html`
 - `contact.html`
+- `privacy.html`, `terms.html`, `cookies.html`, `accessibility.html` (legal pages)
+- `consent.js` (cookie consent; gates analytics and third-party embeds)
+- `vercel.json` (security headers / CSP)
+- `fonts/` (self-hosted fonts)
 - `site.css`
 - `site.js`
 - `logo.png`
